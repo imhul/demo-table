@@ -4,7 +4,7 @@
   "description": "pricing comparison table",
   "scripts": {
     "go": "parcel src/index.html",
-    "build": "parcel build",
+    "build": "parcel build src/index.html",
     "format": "prettier --write src/**/*.{js,css,scss,html,json,md}"
   },
   "author": "Tkachuk Zakhar <blashirk@gmail.com>",
