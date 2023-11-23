@@ -5,7 +5,9 @@
   "scripts": {
     "go": "parcel src/index.html",
     "build": "parcel build src/index.html",
-    "format": "prettier --write src/**/*.{js,css,scss,html,json,md}"
+    "format": "prettier --write src/**/*.{js,css,scss,html,json,md}",
+    "predeploy": "rm -rf dist && parcel build src/index.html --no-source-maps --public-url ./",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Tkachuk Zakhar <blashirk@gmail.com>",
   "license": "ISC",
