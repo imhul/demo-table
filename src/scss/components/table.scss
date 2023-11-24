@@ -32,18 +32,18 @@ table {
       &[class^='row-'] {
         transition: background-color var(--transition-long-time)
           var(--timing-fn);
+
+        &:hover {
+          background-color: var(--color-third);
+
+          td {
+            color: var(--color-primary);
+          }
+        }
       }
 
       &:nth-child(odd) {
         background-color: var(--color-secondary);
-      }
-
-      &:hover {
-        background-color: var(--color-third);
-
-        td {
-          color: var(--color-primary);
-        }
       }
 
       &:last-child {
