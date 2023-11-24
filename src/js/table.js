@@ -48,7 +48,8 @@ export const createTable = () => {
   const thead = document.createElement('thead')
   const trHead = document.createElement('tr')
   trHead.innerHTML =
-    '<th></th>' + data.map((item) => `<th>${item.name}</th>`).join('')
+    '<th></th>' +
+    data.map((item) => `<th><div>${item.name}</div></th>`).join('')
   thead.appendChild(trHead)
   table.appendChild(thead)
 
@@ -61,7 +62,9 @@ export const createTable = () => {
       'Price',
       ...data.map(
         (item) =>
-          `$<span class="number" id="price-${item.name}">${item.monthlyPrice}</span>.00`
+          `$<span class="number" id="price-${item.name}">` +
+          `${item.monthlyPrice}</span>` +
+          `<span class="desktop">.00</span>`
       ),
     ],
     [

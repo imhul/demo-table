@@ -1,21 +1,46 @@
 // table styles
 
 #table-wrapper {
+  margin-top: rem(40);
   box-shadow: var(--box-shadow);
+
+  @media screen and (min-width: rem(768)) {
+    margin-top: 0;
+  }
 
   table {
     width: 100%;
     display: table;
     border-collapse: collapse;
     border-spacing: 0;
+    table-layout: fixed;
 
     thead {
       tr {
-        background-color: var(--color-primary);
+        background-color: var(--color-btn-focus);
         text-transform: capitalize;
 
         th {
-          padding: rem(20) rem(10);
+          height: rem(110);
+
+          @media screen and (min-width: rem(768)) {
+            height: max-content;
+            padding: rem(20) rem(10);
+            text-align: center;
+          }
+
+          div {
+            display: inline-block;
+            transform: rotate(-90deg);
+            width: rem(100);
+            text-align: left;
+            color: var(--color-primary);
+
+            @media screen and (min-width: rem(768)) {
+              transform: rotate(0deg);
+              width: unset;
+            }
+          }
         }
       }
     }
@@ -34,6 +59,7 @@
         &[class^='row-'] {
           transition: background-color var(--transition-long-time)
             var(--timing-fn);
+          height: rem(48);
 
           &:hover {
             background-color: var(--color-third);
@@ -52,24 +78,37 @@
           }
         }
 
-        &:nth-child(odd) {
+        &:nth-child(even) {
           background-color: var(--color-secondary);
         }
 
         &:last-child {
           td {
-            padding: rem(25) rem(10);
+            padding: rem(15) rem(5);
+
+            @media screen and (min-width: rem(768)) {
+              padding: rem(25) rem(10);
+            }
           }
         }
 
         td {
-          min-width: rem(90);
-          padding: rem(15) rem(10);
+          padding: rem(5) 0;
           color: var(--color-text);
           transition: color var(--transition-long-time) var(--timing-fn);
 
+          @media screen and (min-width: rem(768)) {
+            min-width: rem(90);
+            padding: rem(15) rem(10);
+          }
+
           &.col-1 {
             text-align: left;
+            padding: rem(5);
+
+            @media screen and (min-width: rem(430)) {
+              padding: rem(15) rem(10);
+            }
           }
 
           .flex-container {
@@ -96,11 +135,23 @@
             transition: color var(--transition-long-time) var(--timing-fn);
 
             @include font(
-              rem(20),
+              rem(16),
               var(--weight-700),
               normal,
               var(--color-text)
             );
+
+            @media screen and (min-width: rem(430)) {
+              font-size: rem(20);
+            }
+          }
+
+          .desktop {
+            display: none;
+
+            @media screen and (min-width: rem(768)) {
+              display: inline-block;
+            }
           }
         }
       }

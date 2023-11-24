@@ -9,8 +9,17 @@ body {
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
-  background-color: var(--color-bg);
-  overflow: hidden;
+  background: var(--color-bg);
+  background: var(--bg-gradient);
+  overflow: hidden auto;
+
+  @media screen and (min-width: rem(430)) {
+    overflow: hidden;
+  }
+
+  @media screen and (orientation: landscape) {
+    overflow: hidden auto;
+  }
 }
 
 *,
@@ -33,9 +42,11 @@ main {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
+  padding-top: rem(60);
 
   @media screen and (min-width: rem(430)) {
     width: 90%;
+    padding-top: 0;
   }
 
   @media screen and (min-width: rem(768)) {

@@ -2,7 +2,7 @@ button {
   border: none;
   border-radius: rem(2);
   height: rem(26);
-  padding: 0 rem(12);
+  padding: 0 rem(6);
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -13,6 +13,10 @@ button {
   outline: none;
 
   @include font(rem(12), var(--weight-500), rem(26), var(--color-primary));
+
+  @media screen and (min-width: rem(768)) {
+    padding: 0 rem(12);
+  }
 
   &.ripple {
     background-position: center;

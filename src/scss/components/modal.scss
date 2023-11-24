@@ -1,7 +1,7 @@
 .modal {
   position: fixed;
-  top: rem(20);
-  right: rem(20);
+  top: 0;
+  right: 0;
   transform: translateX(100%);
   transition: transform var(--transition-time) var(--timing-fn);
   background-color: var(--color-primary);
@@ -9,8 +9,13 @@
   border-radius: rem(4);
   box-shadow: var(--box-shadow);
   z-index: 9999;
-}
 
-.modal.modal-visible {
-  transform: translateX(0);
+  @media screen and (min-width: rem(430)) {
+    top: rem(20);
+    right: rem(20);
+  }
+
+  &.modal-visible {
+    transform: translateX(0);
+  }
 }
