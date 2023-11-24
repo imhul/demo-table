@@ -1,8 +1,12 @@
+import { openModal } from './modal'
+
 const signUp = (planName, period) => {
-  console.log(
+  const text =
     `Signing up for ${String(planName).toUpperCase()} plan ` +
-      `and ${String(period).toUpperCase()} billing frequency!`
-  )
+    `and ${String(period).toUpperCase()} billing frequency!`
+
+  console.info(text)
+  openModal(text)
   // Code to sign up user for plan
 }
 

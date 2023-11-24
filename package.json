@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "pricing comparison table",
   "scripts": {
-    "go": "parcel src/index.html",
+    "go": "rm -rf dist && parcel src/index.html",
     "build": "parcel build src/index.html",
     "format": "prettier --write src/**/*.{js,css,scss,html,json,md}",
     "predeploy": "rm -rf dist && parcel build src/index.html --no-source-maps --public-url ./",
