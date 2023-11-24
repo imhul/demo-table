@@ -4,7 +4,7 @@ author: "Tkachuk Zakhar"
 
 date: "2021-11-23"
 
-live: [demo](https://imhul.github.io/demo-table/)
+github page: [demo](https://imhul.github.io/demo-table/)
 
 ## install
 

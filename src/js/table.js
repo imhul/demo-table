@@ -147,8 +147,8 @@ export const createTable = () => {
     td.innerHTML = cellContent
     buttonsTr.appendChild(td)
   })
-  tbody.appendChild(buttonsTr)
 
+  tbody.appendChild(buttonsTr)
   table.appendChild(tbody)
   tableContainer.appendChild(table)
 }
