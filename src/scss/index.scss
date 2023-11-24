@@ -1,9 +1,11 @@
 // common styles
-@import 'variables';
+
 @import 'mixins';
+@import 'variables';
 @import 'common';
 
 // components
 @import 'components/header';
 @import 'components/table';
 @import 'components/switch';
+@import 'components/btn';

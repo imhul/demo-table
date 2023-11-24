@@ -11,12 +11,15 @@ table {
     tr {
       background-color: var(--color-primary);
       text-transform: capitalize;
+
+      th {
+        padding: rem(20) rem(10);
+      }
     }
   }
 
   th,
   td {
-    padding: rem(15) rem(10);
     text-align: center;
     border-radius: 0;
     vertical-align: middle;
@@ -24,8 +27,11 @@ table {
 
   tbody {
     tr {
-      transition: background-color var(--transition-time) var(--timing-function);
       background-color: var(--color-primary);
+
+      &[class^="row-"] {
+        transition: background-color var(--transition-long-time) var(--timing-fn);
+      }
 
       &:nth-child(odd) {
         background-color: var(--color-secondary);
@@ -33,10 +39,23 @@ table {
 
       &:hover {
         background-color: var(--color-third);
+
+        td {
+          color: var(--color-primary);
+        }
+      }
+
+      &:last-child {
+        td {
+          padding: rem(25) rem(10);
+        }
       }
 
       td {
         min-width: rem(90);
+        padding: rem(15) rem(10);
+        color: var(--color-text);
+        transition: color var(--transition-long-time) var(--timing-fn);
 
         &.col-1 {
           text-align: left;
@@ -49,6 +68,7 @@ table {
           align-items: center;
 
           span {
+            min-width: rem(60);
             margin: 0 rem(10);
           }
         }

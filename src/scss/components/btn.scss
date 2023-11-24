@@ -1,0 +1,37 @@
+button {
+    border: none;
+    border-radius: rem(2);
+    height: rem(32);
+    padding: 0 rem(16);
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: white;
+    background-color: var(--color-btn);
+    box-shadow: var(--box-shadow);
+    outline: none;
+  
+    @include font(rem(14), var(--weight-500), rem(32), var(--color-primary));
+  
+    &.ripple {
+      background-position: center;
+      transition: background 0.8s;
+  
+      &:focus {
+        background-color: var(--color-btn-focus);
+      }
+  
+      &:hover {
+        background: var(--color-btn-hover) radial-gradient(circle, transparent 1%, var(--color-btn-hover) 1%)
+          center/15000%;
+        box-shadow: var(--box-shadow-2);
+      }
+  
+      &:active {
+        background-color: var(--color-primary);
+        background-size: 100%;
+        transition: background 0s;
+      }
+    }
+  }

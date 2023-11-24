@@ -6,7 +6,7 @@ const signUp = (planName) => {
 }
 
 export const handleSignUp = () => {
-  const buttons = document.querySelectorAll('.sign-up-btn')
+  const buttons = document.querySelectorAll('.ripple')
 
   buttons.forEach((button) => {
     button.addEventListener('click', () => {

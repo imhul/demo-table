@@ -1,5 +1,5 @@
 :root {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   color: var(--color-text);
 
   // colors
@@ -11,6 +11,9 @@
   --color-third: #80cbc4;
   --color-bg: #4db6ac;
   --color-text: #004d40;
+  --color-btn: #26a69a;
+  --color-btn-hover: #2bbbad;
+  --color-btn-focus: #1d7d74;
   --color-shadow-1: rgba(0, 0, 0, 0.2);
   --color-shadow-2: rgba(0, 0, 0, 0.12);
   --color-shadow-3: rgba(0, 0, 0, 0.14);
@@ -32,12 +35,14 @@
 
   // transitions
   --transition-time: 0.35s;
-  --timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-long-time: 0.85s;
+  --timing-fn: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   // FX
-  --box-shadow: 0 rem(24) rem(38) rem(3) var(--color-shadow-3),
-    0 rem(9) rem(46) rem(8) var(--color-shadow-2),
+  --box-shadow: 0 rem(24) rem(38) rem(3) var(--color-shadow-3), 0 rem(9) rem(46) rem(8) var(--color-shadow-2),
     0 rem(11) rem(15) rem(-7) var(--color-shadow-1);
+  --box-shadow-2: 0 rem(3) rem(3) 0 var(--color-shadow-3), 0 rem(1) rem(7) 0 var(--color-shadow-2),
+    0 rem(3) rem(1) rem(-1) var(--color-shadow-1);
 
   // measurements
   --inherit: inherit;

@@ -3,6 +3,7 @@
 import data from '../data/data.json'
 
 let period = 'monthly' // 'monthly' or 'yearly'
+const icon = new URL('../assets/svg/double-check-icon.svg', import.meta.url);
 
 const updateTable = () => {
   period = period === 'monthly' ? 'yearly' : 'monthly'
@@ -83,8 +84,8 @@ export const createTable = () => {
     '',
     ...data.map(
       (item) =>
-        `<button class="sign-up-btn" data-period="${period}" ` +
-        `data-plan="${item.name}">Sign Up</button>`
+        `<button class="ripple" data-period="${period}" ` +
+        `data-plan="${item.name}">Sign Up <img src="${icon}" width="16" alt="check icon" /></button>`
     ),
   ]
 
