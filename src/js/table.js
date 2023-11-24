@@ -74,14 +74,15 @@ export const createTable = () => {
 
   for (let i = 1; i <= data[0].features.length; i++) {
     const featureName = data[0].features[i - 1].name
-    const isFeatureExists = data[0].features[i - 1].exist
     const featureRow = [
       featureName,
-      ...data.map(
-        () =>
+      ...data.map((item) => {
+        const isFeatureExists = item.features[i - 1].exist
+        return (
           `<span class="icon ${isFeatureExists ? 'exists' : ''}">` +
           `${isFeatureExists ? '✔' : '✘'}</span>`
-      ),
+        )
+      }),
     ]
     rows.push(featureRow)
   }

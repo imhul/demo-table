@@ -1,13 +1,13 @@
 .modal {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: rem(20);
+  right: rem(20);
   transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-time) var(--timing-fn);
+  background-color: var(--color-primary);
+  padding: rem(20);
+  border-radius: rem(4);
+  box-shadow: var(--box-shadow);
   z-index: 9999;
 }
 
