@@ -1,76 +1,79 @@
 // table styles
 
-table {
-  width: 100%;
-  display: table;
-  border-collapse: collapse;
-  border-spacing: 0;
+#table-wrapper {
   box-shadow: var(--box-shadow);
 
-  thead {
-    tr {
-      background-color: var(--color-primary);
-      text-transform: capitalize;
+  table {
+    width: 100%;
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
 
-      th {
-        padding: rem(20) rem(10);
+    thead {
+      tr {
+        background-color: var(--color-primary);
+        text-transform: capitalize;
+
+        th {
+          padding: rem(20) rem(10);
+        }
       }
     }
-  }
 
-  th,
-  td {
-    text-align: center;
-    border-radius: 0;
-    vertical-align: middle;
-  }
+    th,
+    td {
+      text-align: center;
+      border-radius: 0;
+      vertical-align: middle;
+    }
 
-  tbody {
-    tr {
-      background-color: var(--color-primary);
+    tbody {
+      tr {
+        background-color: var(--color-primary);
 
-      &[class^='row-'] {
-        transition: background-color var(--transition-long-time)
-          var(--timing-fn);
+        &[class^='row-'] {
+          transition: background-color var(--transition-long-time)
+            var(--timing-fn);
 
-        &:hover {
-          background-color: var(--color-third);
+          &:hover {
+            background-color: var(--color-third);
 
-          td {
-            color: var(--color-primary);
+            td {
+              color: var(--color-primary);
+            }
           }
         }
-      }
 
-      &:nth-child(odd) {
-        background-color: var(--color-secondary);
-      }
+        &:nth-child(odd) {
+          background-color: var(--color-secondary);
+        }
 
-      &:last-child {
+        &:last-child {
+          td {
+            padding: rem(25) rem(10);
+          }
+        }
+
         td {
-          padding: rem(25) rem(10);
-        }
-      }
+          min-width: rem(90);
+          padding: rem(15) rem(10);
+          color: var(--color-text);
+          transition: color var(--transition-long-time) var(--timing-fn);
 
-      td {
-        min-width: rem(90);
-        padding: rem(15) rem(10);
-        color: var(--color-text);
-        transition: color var(--transition-long-time) var(--timing-fn);
+          &.col-1 {
+            text-align: left;
+          }
 
-        &.col-1 {
-          text-align: left;
-        }
+          .flex-container {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+            align-items: center;
 
-        .flex-container {
-          display: flex;
-          flex-flow: row wrap;
-          justify-content: space-evenly;
-          align-items: center;
-
-          span {
-            min-width: rem(60);
-            margin: 0 rem(10);
+            span {
+              min-width: rem(60);
+              margin: 0 rem(10);
+            }
           }
         }
       }

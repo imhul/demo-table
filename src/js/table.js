@@ -22,10 +22,7 @@ const updateTable = () => {
     let stepCount = 0
 
     const animatePrice = () => {
-      const progress = stepCount / animationSteps
-      const easingFactor = 1 - Math.pow(1 - progress, 10) // Modified easing function with power 10
-
-      currentValue += stepValue * easingFactor
+      currentValue += stepValue
       price.innerHTML = Math.round(currentValue)
 
       stepCount++
