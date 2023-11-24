@@ -40,6 +40,14 @@
 
             td {
               color: var(--color-primary);
+
+              .number {
+                color: var(--color-primary);
+              }
+
+              .icon:not(.exists) {
+                color: var(--color-primary);
+              }
             }
           }
         }
@@ -74,6 +82,25 @@
               min-width: rem(60);
               margin: 0 rem(10);
             }
+          }
+
+          .icon:not(.exists) {
+            color: var(--color-danger);
+
+            &:hover {
+              color: var(--color-primary);
+            }
+          }
+
+          .number {
+            transition: color var(--transition-long-time) var(--timing-fn);
+
+            @include font(
+              rem(20),
+              var(--weight-700),
+              normal,
+              var(--color-text)
+            );
           }
         }
       }

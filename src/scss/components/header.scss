@@ -6,7 +6,17 @@ header {
   padding-top: rem(100);
 
   h1 {
-    @include font(rem(50), var(--weight-700), rem(56), var(--color-primary));
     text-align: center;
+    text-shadow: var(--text-shadow);
+
+    @include font(2vw, var(--weight-700), 1.4, var(--color-primary));
+
+    @media screen and (min-width: rem(430)) {
+      font-size: 4vw;
+    }
+
+    @media screen and (min-width: rem(768)) {
+      font-size: 6vw;
+    }
   }
 }

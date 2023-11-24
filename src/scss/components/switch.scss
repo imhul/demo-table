@@ -35,7 +35,7 @@
     display: inline-block;
     width: rem(40);
     height: rem(20);
-    background-color: var(--color-shadow-4);
+    background-color: var(--color-bg);
     border-radius: rem(20);
     transition: all var(--transition-time);
   }
@@ -46,7 +46,7 @@
     width: rem(18);
     height: rem(18);
     border-radius: 50%;
-    background-color: white;
+    background-color: var(--color-white);
     top: rem(1);
     left: rem(1);
     transition: all var(--transition-time);
@@ -57,7 +57,7 @@
   }
 
   .checkbox:checked + .switch {
-    background-color: var(--color-bg);
+    background-color: var(--color-btn-focus);
   }
 
   .checkbox {

@@ -1,22 +1,24 @@
 button {
   border: none;
   border-radius: rem(2);
-  height: rem(32);
-  padding: 0 rem(16);
+  height: rem(26);
+  padding: 0 rem(12);
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
-  color: white;
+  color: var(--color-primary);
   background-color: var(--color-btn);
   box-shadow: var(--box-shadow);
   outline: none;
 
-  @include font(rem(14), var(--weight-500), rem(32), var(--color-primary));
+  @include font(rem(12), var(--weight-500), rem(26), var(--color-primary));
 
   &.ripple {
     background-position: center;
-    transition: background 0.8s;
+    transition:
+      background var(--transition-long-time),
+      box-shadow var(--transition-time);
 
     &:focus {
       background-color: var(--color-btn-focus);
@@ -34,5 +36,20 @@ button {
       background-size: 100%;
       transition: background 0s;
     }
+  }
+
+  img {
+    display: none;
+
+    @media screen and (min-width: rem(768)) {
+      display: inline-block;
+    }
+  }
+
+  @media screen and (min-width: rem(768)) {
+    height: rem(32);
+    padding: 0 rem(16);
+    font-size: rem(14);
+    line-height: rem(32);
   }
 }

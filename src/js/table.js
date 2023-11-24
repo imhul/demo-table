@@ -8,7 +8,12 @@ const icon = new URL('../assets/svg/double-check-icon.svg', import.meta.url)
 const updateTable = () => {
   period = period === 'monthly' ? 'yearly' : 'monthly'
   const periodCell = document.getElementById('period')
+  const buttons = document.querySelectorAll('.ripple')
   periodCell.innerHTML = period
+
+  buttons.forEach((button) => {
+    button.setAttribute('data-period', period)
+  })
 
   data.forEach((item) => {
     const price = document.getElementById(`price-${item.name}`)
@@ -56,7 +61,7 @@ export const createTable = () => {
       'Price',
       ...data.map(
         (item) =>
-          `$<span id="price-${item.name}">${item.monthlyPrice}</span>.00`
+          `$<span class="number" id="price-${item.name}">${item.monthlyPrice}</span>.00`
       ),
     ],
     [
@@ -68,10 +73,15 @@ export const createTable = () => {
   ]
 
   for (let i = 1; i <= data[0].features.length; i++) {
-    const featureName = `Feature ${i}`
+    const featureName = data[0].features[i - 1].name
+    const isFeatureExists = data[0].features[i - 1].exist
     const featureRow = [
       featureName,
-      ...data.map((item) => (item.features[i - 1].exist ? '✔' : '✘')),
+      ...data.map(
+        () =>
+          `<span class="icon ${isFeatureExists ? 'exists' : ''}">` +
+          `${isFeatureExists ? '✔' : '✘'}</span>`
+      ),
     ]
     rows.push(featureRow)
   }
@@ -82,7 +92,8 @@ export const createTable = () => {
     ...data.map(
       (item) =>
         `<button class="ripple" data-period="${period}" ` +
-        `data-plan="${item.name}">Sign Up <img src="${icon}" width="16" alt="check icon" /></button>`
+        `data-plan="${item.name}">Sign Up <img src="${icon}"` +
+        `width="16" alt="check icon" /></button>`
     ),
   ]
 

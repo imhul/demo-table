@@ -32,11 +32,11 @@ main {
   flex-flow: column wrap;
   justify-content: center;
 
-  @media all and (min-width: rem(430)) {
+  @media screen and (min-width: rem(430)) {
     width: 90%;
   }
 
-  @media (min-width: rem(768)) {
+  @media screen and (min-width: rem(768)) {
     width: 80%;
   }
 }

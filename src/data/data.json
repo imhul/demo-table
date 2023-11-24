@@ -5,19 +5,19 @@
     "monthlyPrice": 49,
     "features": [
       {
-        "name": "Feature 1",
+        "name": "Basic functionality",
         "exist": true
       },
       {
-        "name": "Feature 2",
+        "name": "Basic capabilities",
         "exist": false
       },
       {
-        "name": "Feature 3",
+        "name": "Enhanced capabilities",
         "exist": false
       },
       {
-        "name": "Feature 4",
+        "name": "User support",
         "exist": false
       }
     ]
@@ -28,19 +28,19 @@
     "monthlyPrice": 99,
     "features": [
       {
-        "name": "Feature 1",
+        "name": "Basic functionality",
         "exist": true
       },
       {
-        "name": "Feature 2",
+        "name": "Basic capabilities",
         "exist": true
       },
       {
-        "name": "Feature 3",
+        "name": "Enhanced capabilities",
         "exist": false
       },
       {
-        "name": "Feature 4",
+        "name": "User support",
         "exist": false
       }
     ]
@@ -51,19 +51,19 @@
     "monthlyPrice": 299,
     "features": [
       {
-        "name": "Feature 1",
+        "name": "Basic functionality",
         "exist": true
       },
       {
-        "name": "Feature 2",
+        "name": "Basic capabilities",
         "exist": true
       },
       {
-        "name": "Feature 3",
+        "name": "Enhanced capabilities",
         "exist": true
       },
       {
-        "name": "Feature 4",
+        "name": "User support",
         "exist": true
       }
     ]
