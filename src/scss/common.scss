@@ -1,7 +1,16 @@
 // common styles
 
 html {
+  height: auto;
   -webkit-text-size-adjust: 100%;
+
+  @media screen and (min-width: rem(430)) {
+    height: 100%;
+  }
+
+  @media screen and (orientation: landscape) and (max-width: rem(940)) {
+    height: auto;
+  }
 }
 
 body {
@@ -9,7 +18,6 @@ body {
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
-  background: var(--color-bg);
   background: var(--bg-gradient);
   overflow: hidden auto;
 
@@ -17,7 +25,7 @@ body {
     overflow: hidden;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (orientation: landscape) and (max-width: rem(940)) {
     overflow: hidden auto;
   }
 }
@@ -51,6 +59,11 @@ main {
 
   @media screen and (min-width: rem(768)) {
     width: 80%;
+  }
+
+  @media screen and (orientation: landscape) {
+    margin: 0 auto rem(60);
+    height: calc(100vh + 100%);
   }
 }
 

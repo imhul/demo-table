@@ -12,6 +12,16 @@ header {
     height: 25%;
   }
 
+  @media screen and (orientation: landscape) and (max-width: rem(940)) {
+    position: relative;
+    height: rem(100);
+  }
+
+  @media screen and (orientation: landscape) and (min-width: rem(940)) {
+    position: relative;
+    height: rem(250);
+  }
+
   h1 {
     max-width: 80%;
     margin: 0 auto;

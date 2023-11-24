@@ -1,10 +1,13 @@
 // table styles
 
 #table-wrapper {
-  margin-top: rem(40);
   box-shadow: var(--box-shadow);
 
-  @media screen and (min-width: rem(768)) {
+  @media screen and (orientation: portrait) and (max-width: rem(768)) {
+    margin-top: rem(40);
+  }
+
+  @media screen and (orientation: portrait) and (min-width: rem(768)) {
     margin-top: 0;
   }
 
