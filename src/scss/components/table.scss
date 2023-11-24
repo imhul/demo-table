@@ -29,8 +29,9 @@ table {
     tr {
       background-color: var(--color-primary);
 
-      &[class^="row-"] {
-        transition: background-color var(--transition-long-time) var(--timing-fn);
+      &[class^='row-'] {
+        transition: background-color var(--transition-long-time)
+          var(--timing-fn);
       }
 
       &:nth-child(odd) {

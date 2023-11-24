@@ -3,7 +3,7 @@
 import data from '../data/data.json'
 
 let period = 'monthly' // 'monthly' or 'yearly'
-const icon = new URL('../assets/svg/double-check-icon.svg', import.meta.url);
+const icon = new URL('../assets/svg/double-check-icon.svg', import.meta.url)
 
 const updateTable = () => {
   period = period === 'monthly' ? 'yearly' : 'monthly'
