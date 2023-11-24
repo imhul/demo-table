@@ -1,3 +1,9 @@
-@use 'variables';
-@use 'common';
-@use 'table';
+// common styles
+@import 'variables';
+@import 'mixins';
+@import 'common';
+
+// components
+@import 'components/header';
+@import 'components/table';
+@import 'components/switch';

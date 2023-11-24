@@ -1,0 +1,66 @@
+// Switch
+
+.control {
+  position: relative;
+
+  // tooltip
+  &::before {
+    content: 'monthly / yearly';
+    position: absolute;
+    top: rem(-36);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-text);
+    padding: rem(6) rem(12);
+    border-radius: rem(4);
+    width: max-content;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity var(--transition-time),
+      visibility var(--transition-time);
+
+    @include font(rem(12), var(--weight-400), normal, var(--color-white));
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: rem(40);
+    height: rem(20);
+    background-color: var(--color-shadow-4);
+    border-radius: rem(20);
+    transition: all var(--transition-time);
+  }
+
+  .switch::after {
+    content: '';
+    position: absolute;
+    width: rem(18);
+    height: rem(18);
+    border-radius: 50%;
+    background-color: white;
+    top: rem(1);
+    left: rem(1);
+    transition: all var(--transition-time);
+  }
+
+  .checkbox:checked + .switch::after {
+    left: rem(20);
+  }
+
+  .checkbox:checked + .switch {
+    background-color: var(--color-bg);
+  }
+
+  .checkbox {
+    display: none;
+  }
+}

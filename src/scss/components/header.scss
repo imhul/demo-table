@@ -1,0 +1,12 @@
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: rem(100);
+
+  h1 {
+    @include font(rem(50), var(--weight-700), rem(56), var(--color-primary));
+    text-align: center;
+  }
+}

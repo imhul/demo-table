@@ -1,0 +1,14 @@
+@use 'sass:math';
+
+@function rem($px) {
+  @return math.div($px * 1px, 16px) * 1rem;
+}
+
+@mixin font($size, $weight, $line, $color) {
+  color: $color;
+  font-weight: $weight;
+  font-size: $size;
+  font-style: normal;
+  line-height: $line;
+  letter-spacing: normal;
+}

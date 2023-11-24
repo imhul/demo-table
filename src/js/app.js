@@ -1,14 +1,9 @@
 // app.js
 import { createTable } from './table.js'
 import { handleSignUp } from './signUp.js'
+import '@fontsource/roboto'
 
-export const signUp = (planName) => {
-  console.info(`Signing up for ${planName} plan`)
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  let period = 'yearly' // 'monthly' or 'yearly'
-
-  createTable(period)
+document.addEventListener('DOMContentLoaded', () => {
+  createTable()
   handleSignUp()
 })

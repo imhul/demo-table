@@ -1,5 +1,8 @@
 const signUp = (planName) => {
-  console.log(`Signing up for ${planName} plan`)
+  console.log(
+    `Signing up for ${planName} plan and ${period} billing frequency!`
+  )
+  // Code to sign up user for plan
 }
 
 export const handleSignUp = () => {
@@ -8,7 +11,8 @@ export const handleSignUp = () => {
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
       const planName = button.getAttribute('data-plan')
-      signUp(planName)
+      const period = button.getAttribute('data-period')
+      signUp(planName, period)
     })
   })
 }

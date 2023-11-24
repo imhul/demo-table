@@ -1,5 +1,46 @@
 // common styles
 
-html {}
+html {
+  -webkit-text-size-adjust: 100%;
+}
 
-body {}
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-bg);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+table,
+th,
+td {
+  border: none;
+}
+
+main {
+  width: 95%;
+  height: 100vh;
+  max-width: rem(1200);
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+
+  @media all and (min-width: rem(430)) {
+    width: 90%;
+  }
+
+  @media (min-width: rem(768)) {
+    width: 80%;
+  }
+}
+
+.capitalize {
+  text-transform: capitalize;
+}

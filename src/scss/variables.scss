@@ -1,5 +1,44 @@
-// variables
+:root {
+  font-family: 'Roboto';
+  color: var(--color-text);
 
-// colors
+  // colors
+  --transparent: rgb(0 0 0 / 0%);
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-primary: #e0f2f1;
+  --color-secondary: #b2dfdb;
+  --color-third: #80cbc4;
+  --color-bg: #4db6ac;
+  --color-text: #004d40;
+  --color-shadow-1: rgba(0, 0, 0, 0.2);
+  --color-shadow-2: rgba(0, 0, 0, 0.12);
+  --color-shadow-3: rgba(0, 0, 0, 0.14);
+  --color-shadow-4: rgba(0, 0, 0, 0.25);
 
-// fonts
+  // font-weight
+  --weight-100: 100;
+  --weight-200: 200;
+  --weight-300: 300;
+  --weight-400: 400;
+  --weight-500: 500;
+  --weight-600: 600;
+  --weight-700: 700;
+  --weight-800: 800;
+  --weight-900: 900;
+
+  // border-radius
+  --br-rounded: 50%;
+
+  // transitions
+  --transition-time: 0.35s;
+  --timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  // FX
+  --box-shadow: 0 rem(24) rem(38) rem(3) var(--color-shadow-3),
+    0 rem(9) rem(46) rem(8) var(--color-shadow-2),
+    0 rem(11) rem(15) rem(-7) var(--color-shadow-1);
+
+  // measurements
+  --inherit: inherit;
+}

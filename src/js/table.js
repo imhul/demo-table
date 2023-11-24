@@ -1,7 +1,43 @@
-// Create table with data from data.js
-import { data } from './data.js'
+// Create table with data from data.json
 
-export const createTable = (period) => {
+import data from '../data/data.json'
+
+let period = 'monthly' // 'monthly' or 'yearly'
+
+const updateTable = () => {
+  period = period === 'monthly' ? 'yearly' : 'monthly'
+  const periodCell = document.getElementById('period')
+  periodCell.innerHTML = period
+
+  data.forEach((item) => {
+    const price = document.getElementById(`price-${item.name}`)
+    const currentPrice = parseInt(price.innerHTML)
+    const targetPrice =
+      period === 'monthly' ? item.monthlyPrice : item.monthlyPrice * 12
+    const animationSteps = 50
+    const stepValue = (targetPrice - currentPrice) / animationSteps
+
+    let currentValue = currentPrice
+    let stepCount = 0
+
+    const animatePrice = () => {
+      const progress = stepCount / animationSteps
+      const easingFactor = 1 - Math.pow(1 - progress, 10) // Modified easing function with power 10
+
+      currentValue += stepValue * easingFactor
+      price.innerHTML = Math.round(currentValue)
+
+      stepCount++
+      if (stepCount < animationSteps) {
+        requestAnimationFrame(animatePrice)
+      }
+    }
+
+    animatePrice()
+  })
+}
+
+export const createTable = () => {
   const tableContainer = document.getElementById('table-wrapper')
   const table = document.createElement('table')
 
@@ -22,13 +58,15 @@ export const createTable = (period) => {
       'Price',
       ...data.map(
         (item) =>
-          `$${(period === 'monthly'
-            ? item.monthlyPrice
-            : item.monthlyPrice * 12
-          ).toFixed(2)}`
+          `$<span id="price-${item.name}">${item.monthlyPrice}</span>.00`
       ),
     ],
-    ['Billing Frequency', ...data.map(() => period)],
+    [
+      'Billing Frequency',
+      ...data.map(
+        () => `<span class="capitalize" id="period">${period}</span>`
+      ),
+    ],
   ]
 
   for (let i = 1; i <= data[0].features.length; i++) {
@@ -45,9 +83,24 @@ export const createTable = (period) => {
     '',
     ...data.map(
       (item) =>
-        `<button class="sign-up-btn" data-plan="${item.name}">Sign Up</button>`
+        `<button class="sign-up-btn" data-period="${period}" ` +
+        `data-plan="${item.name}">Sign Up</button>`
     ),
   ]
+
+  // Switch
+  const control = document.createElement('div')
+  control.classList.add('control')
+  const input = document.createElement('input')
+  input.setAttribute('type', 'checkbox')
+  input.setAttribute('id', 'toggle')
+  input.classList.add('checkbox')
+  input.addEventListener('change', updateTable)
+  const label = document.createElement('label')
+  label.setAttribute('for', 'toggle')
+  label.classList.add('switch')
+  control.appendChild(input)
+  control.appendChild(label)
 
   // Creating rows in tbody
   rows.forEach((row, index) => {
@@ -55,9 +108,19 @@ export const createTable = (period) => {
     tr.classList.add(`row-${index + 1}`)
 
     row.forEach((cellContent, cellIndex) => {
+      if (index === 1 && cellIndex > 1) return
       const td = document.createElement('td')
       td.classList.add(`col-${cellIndex + 1}`)
-      td.innerHTML = cellContent
+      if (index === 1 && cellIndex === 1) {
+        const flexContainer = document.createElement('div')
+        flexContainer.classList.add('flex-container')
+        flexContainer.innerHTML = cellContent
+        flexContainer.appendChild(control)
+        td.setAttribute('colspan', 3)
+        td.appendChild(flexContainer)
+      } else {
+        td.innerHTML = cellContent
+      }
       tr.appendChild(td)
     })
 
